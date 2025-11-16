@@ -31,7 +31,7 @@ ask_nginx_port() {
 
     if [ -n "$nginx_port" ]; then
         echo "[Huasen Log]：正在修改 nginx 端口为 $nginx_port:10086 ..."
-        sed -i "s/- [0-9]*:10086/- $nginx_port:10086/" "$project_path/$git_name/docker-compose.yml"
+        sed -i "s/- [0-9]*:80/- $nginx_port:10086/" "$project_path/$git_name/docker-compose.yml"
         echo "[Huasen Log]：nginx 端口已修改为 $nginx_port:10086"
     else
         echo "[Huasen Log]：未修改 nginx 端口，保持默认端口 10086"
