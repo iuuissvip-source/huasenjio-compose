@@ -77,6 +77,8 @@ services:
     ports:
       # 宿主机:容器
       - 80:80
+      -target: 80
+      published: 10086
       # 开启https
       # - 443:443
     environment:
