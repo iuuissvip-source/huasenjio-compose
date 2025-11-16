@@ -180,6 +180,12 @@ const STATUS = {
   AUTH: 401, // 无法认证，重新登录
 };
 
+// 默认管理员
+const ADMIN = {
+  id: 'admin@qq.com',
+  password: '123456',
+};
+
 /**
  * 对称密钥
  * 密钥格式：16位数子/字母
