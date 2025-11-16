@@ -27,14 +27,14 @@ if [ "$(id -u)" != "0" ]; then
 fi
 
 ask_nginx_port() {
-    echo "[Huasen Log]：花森起始页网关默认端口为 80，如需修改为其他端口？建议输入 1024-65535，例如：8282，并且避免与其他服务冲突。若直接回车，则保持不变。请输入内容（端口号或直接回车）："
+    echo "[Huasen Log]：花森起始页网关默认端口为 10086，如需修改为其他端口？建议输入 1024-65535，例如：8282，并且避免与其他服务冲突。若直接回车，则保持不变。请输入内容（端口号或直接回车）："
 
     if [ -n "$nginx_port" ]; then
-        echo "[Huasen Log]：正在修改 nginx 端口为 $nginx_port:80 ..."
-        sed -i "s/- [0-9]*:80/- $nginx_port:80/" "$project_path/$git_name/docker-compose.yml"
-        echo "[Huasen Log]：nginx 端口已修改为 $nginx_port:80"
+        echo "[Huasen Log]：正在修改 nginx 端口为 $nginx_port:10086 ..."
+        sed -i "s/- [0-9]*:10086/- $nginx_port:10086/" "$project_path/$git_name/docker-compose.yml"
+        echo "[Huasen Log]：nginx 端口已修改为 $nginx_port:10086"
     else
-        echo "[Huasen Log]：未修改 nginx 端口，保持默认端口 80"
+        echo "[Huasen Log]：未修改 nginx 端口，保持默认端口 10086"
     fi
 }
 
